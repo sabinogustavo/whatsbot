@@ -1,7 +1,7 @@
 import pywhatkit
 import pandas as pd 
 
-base = f"base/{input('Insira o nome do arquivo a ser utilizado: ')}"
+base = f"base/{input('Insira o nome do arquivo a ser utilizado: ')}.csv"
 clientes = pd.read_csv(base, sep=";", encoding="ISO-8859-1")
 
 
