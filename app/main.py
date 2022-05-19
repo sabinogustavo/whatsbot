@@ -1,7 +1,8 @@
 import pywhatkit
 import pandas as pd 
 
-clientes = pd.read_csv("base/clientes_migracao.csv", sep=";", encoding="ISO-8859-1")
+base = f"base/{input('Insira o nome do arquivo a ser utilizado')}"
+clientes = pd.read_csv(base, sep=";", encoding="ISO-8859-1")
 
 
 for cliente in range(len(clientes)):
@@ -14,7 +15,6 @@ for cliente in range(len(clientes)):
         i = 1
         for mensagem in mensagens:
             pywhatkit.sendwhatmsg_instantly(phone_no=f"+55{int(clientes.loc[cliente, 'NR_TELEFONE'])}", message = mensagem, wait_time = 40, tab_close = True )
-        
             i+=1
      
 
